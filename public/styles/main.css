@@ -1,0 +1,158 @@
+:root {
+  --textColor: rgb(223, 223, 223);
+  --altTextColor: rgb(168, 123, 0);
+  --veryDark: rgb(27, 27, 27);
+  --dark: rgb(59, 59, 59);
+  --light: grey;
+  --bodySize: 600px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: var(--textColor);
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  background-color: var(--veryDark);
+}
+
+.auth-grid {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 600px;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  background-color: var(--dark);
+}
+
+.heartwarming {
+  height: 100%;
+  width: 100%;
+  background-color: var(--veryDark);
+  background-image: url(../img/bird_lady.jpg);
+  background-size: cover;
+}
+
+.auth-container {
+  height: 300px;
+  width: 500px;
+  right: 0;
+  top: 0;
+  background-color: var(--dark);
+  text-align: center;
+}
+
+.auth-form {
+  padding: 20px;
+  width: 500px;
+  height: 300px;
+}
+
+input {
+  background-color: var(--veryDark);
+  color: var(--altTextColor);
+}
+
+.input-text {
+  width: 90%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.submit-button {
+  padding: 10px;
+  margin-top: 50px;
+}
+
+h1 {
+  margin: 20px;
+}
+
+h2 {
+  margin: 10px;
+}
+
+.generic-header {
+  width: var(--bodySize);
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: var(--dark);
+  box-shadow: 5px 5px 10px black;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline;
+  margin: 10px;
+}
+
+.generic-main {
+  width: var(--bodySize);
+  margin: 10px auto;
+  text-align: center;
+  background-color: var(--dark);
+  padding: 20px;
+  box-shadow: 5px 5px 10px black;
+}
+
+.generic-main img {
+  width: 100%;
+}
+
+a {
+  color: var(--altTextColor);
+  text-decoration: none;
+}
+
+hr {
+  border: 1px solid var(--veryDark);
+  border-radius: 1px;
+  margin: 30px;
+}
+
+.user-section {
+  padding: 30px;
+}
+
+.user-section input {
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.user-section h3 {
+  margin: 20px;
+  margin-top: -40px;
+}
+
+.positions-list li {
+  display: block;
+  border: 2px solid var(--altTextColor);
+  padding: 10px;
+  margin: 0;
+  margin-top: -2px;
+}
+
+.stockItems {
+  display: block;
+  border: 2px solid var(--altTextColor);
+  padding: 10px;
+  margin: 0;
+  margin-top: -2px;
+  text-align: center;
+  border: ;
+}
+
+#home-button {
+  background-color: var(--veryDark);
+  color: var(--altTextColor);
+  padding: 10px;
+  margin-left: 20px;
+}
