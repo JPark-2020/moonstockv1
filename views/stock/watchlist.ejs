@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchlist</title>
+</head>
+<body>
+    <section>
+    <h2><b>Watchlist</b></h2>
+    <ul>
+        <%for(let i=0;i<stockArray.length;i++){%>
+            <li><%=stockArray[i].name%></li>
+        <%}%>
+    </ul>
+    <footer>
+        <a href="/">Go Home</a>
+    </footer>
+    </section>
+</body>
+</html>
+

@@ -1,0 +1,21 @@
+<%- include("../partials/head.ejs"); %>
+
+<body class="auth-grid">
+    <section class="heartwarming">
+    </section>
+    <section class="auth-container">
+        <h1>Moon Stock</h1>
+        <h3>Login to Your Account</h3>
+        <form action="/login" method="POST" class="auth-form">
+            <input type="text" name="username" placeholder="username" class="input-text">
+            <input type="password" name="password" placeholder="password" class="input-text">
+            <input type="submit" value="Login" class="submit-button">
+            <p style="color: <%= color %>;">
+                <%= info %>
+            </p>
+        </form>
+        Need an account? <a href="/register">Sign Up Here</a>
+    </section>
+</body>
+
+<%- include("../partials/footer.ejs"); %>

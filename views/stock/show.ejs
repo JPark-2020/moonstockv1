@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <%-include("../partials/header.ejs");%>
+    <main class = "generic-main">
+    <h1><%=stocks.name%></h1>
+    <section class ="user-section">
+        <p><b>Current Price: $<%=stocks.price%></b><p>
+        <p><b>Category:<%=stocks.category%></b></p><hr>
+    </section>
+    <section class= "user-section">
+        <form action="/stock/<%=stocks.id%>/buy" method="POST">
+            <div>
+                <h3><label for="buy">Buy</label></h3>
+                <input type="number" id="buy" name="amount" value="amount" max=<%=Math.floor(findUser.cash/stocks.price)%> placeholder="enter amount">
+            </div>
+            <input type="submit" class="submit-button" value="Buy"><hr>
+        </form>
+        <br>
+        <form action="/stock/<%=stocks.id%>/sell" method="POST">
+            <div>
+                <%let x=0;%>
+                <%for(let i=0; i<findUser.stocks.length;i++){%>
+                    <%if(findUser.stocks[i].stock.equals(stocks.id)){%>
+                        <%x = findUser.stocks[i].amount%>
+                    <%}%>
+                <%}%>
+                <h3><label for="sell">Sell</label></h3>
+                <input type="number" id="sell" name="amount" max="<%=x%>" placeholder="enter amount">
+            </div>
+            <input type="submit" class="submit-button" value="Sell"><hr>
+        </form>
+        <br>
+    <form action="<%=stocks.id%>/watchlist" method="POST">
+        <h3>Add to Watchlist</h3>
+        <input type="submit" class="submit-button" value="Add">
+    </form>
+    </section>
+</main>
+</body>
+</html>

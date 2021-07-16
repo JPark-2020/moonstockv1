@@ -1,0 +1,60 @@
+<%- include("partials/head.ejs"); %>
+
+<body>
+    <%- include("partials/header.ejs"); %>
+
+    <main class="generic-main">
+        <h2>Good Morning: <%=findUser.username%>!</h2>
+    
+        <section class="chart">
+            <img src="portfolio.png">
+        </section><hr>
+    
+        <!-- view portfolio holding performance -->
+    
+        <!-- show cash balance -->
+        <section class="cashBalance">
+            <h3>Buying Power: $<%=findUser.cash.toFixed(2)%></h3>
+        </section><hr>
+    
+        <!-- show positions held -->
+        <section class="positions">
+            <h2>
+                <b>Portfolio Holdings: </b>
+                <% let total = 0 %>
+                <% for (let i = 0; i < findUser.stocks.length; i++) { %>
+                    <% total += findUser.stocks[i].amount * portfolioArray[i].price; %>
+                <% } %>
+                $<%= total.toFixed(2); %>
+            </h2>
+
+            <ul class="positions-list">
+                <% for ( let i=0; i<portfolioArray.length; i++ ) { %>
+                    <%if(findUser.stocks[i].amount > 0){%> 
+                        <a href="/stock/<%=findUser.stocks[i].stock%>">
+                            <li>
+                                <%=portfolioArray[i].name%>: <%=findUser.stocks[i].amount%>
+                                <% if (findUser.stocks[i].amount > 1){ %>
+                                    <%= "Shares" %>
+                                <% } else {%>
+                                    <%= "Share" %>
+                                <% } %>
+                            </li>
+                        </a>
+                    <%}%>
+                <%}%>
+            </ul>
+            <br><br>
+            <a href="/stock">Edit Portfolio</a>
+        </section><hr>
+
+        <!-- show positions interested in -->
+        <section class="watchlist">
+            <%- include("partials/watchlist.ejs")%>
+            <br><br>
+            <a href="/stock">Add to Watchlist</a>
+        </section>
+    </main>
+</body>
+
+<%- include("partials/footer.ejs"); %>
