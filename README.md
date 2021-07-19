@@ -51,3 +51,23 @@ User Flow for how the user will navigate the application.
   ![Database ERD](assets/ERD.png)
 
 
+## Screenshots
+
+### Login Page
+
+![login](assets/bird_lady.jpg)
+
+
+### Home Page
+![home1](assets/home.png)
+![home2](assets/portfolio.png)
+
+### Account Page 
+![account1](assets/account.png)
+![account2](assets/accountdeposit.png)
+
+### Stock/Watchlist
+
+![stock1](assets/stockList.png)
+![stock2](assets/buyValidator.png)
+![stock3](assets/sellValidator.png)
